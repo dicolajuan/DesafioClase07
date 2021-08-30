@@ -1,0 +1,20 @@
+[
+	{
+		"tiitle": "Samsung 970 EVO Plus MZ-V7S2T0 2TB",
+		"price": "79709.00",
+		"url": "https://acortar.link/8SKDpi",
+		"id": 1
+	},
+	{
+		"tiitle": "JORDAN AIR 5 RETRO",
+		"price": "35999.00",
+		"url": "https://acortar.link/COh4GM",
+		"id": 2
+	},
+	{
+		"tiitle": "ADIDAS FORUM LOW",
+		"price": "12999.00",
+		"url": "https://acortar.link/YwYTat",
+		"id": 3
+	}
+]
