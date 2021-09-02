@@ -37,7 +37,8 @@ app.get('/items', async (req,res) => {
             <a href="/">Home</a>
             `);
     } catch {
-        res.send('<h1 style="color:red"> Hubo un error </h1> ');
+        console.log('Error al obtener los productos');
+        res.send('<h1 style="color:red"> Parece que hubo un error </h1> ');
     }
 });
 
@@ -57,24 +58,34 @@ app.get('/item-random', async (req,res) => {
             <a href="/">Home</a>`
             );
     } catch {
-        res.send('<h1 style="color:red"> Hubo un error </h1> ');
+        console.log('Error al obtener el producto');
+        res.send('<h1 style="color:red"> Parece que hubo un error </h1> ');
     }
 });
 
 app.get('/visitas', (req,res)=>{
-    res.send(
-        `<h1 style="color:blue"> Visitas </h1>
-        <p> ${JSON.stringify(objVisitas,null,'\t')} </p>
-        <a href="/">Home</a>`
-        );
+    try{
+        res.send(
+            `<h1 style="color:blue"> Visitas </h1>
+            <p> ${JSON.stringify(objVisitas,null,'\t')} </p>
+            <a href="/">Home</a>`
+            );
+    } catch {
+        console.log('Error al obtenerlas visitas');
+        res.send('<h1 style="color:red"> Parece que hubo un error </h1> ');
+    }
 });
 
 app.get('/', (req,res)=>{
-
-    res.send(
-        `<h1 style="color:blue"> Bienvenidos al Servidor Express </h1>
-        <a href="/items">Items</a>
-        <a href="/item-random">Item Random</a>
-        <a href="/visitas">Visitas</a>`
-        );
+    try{
+        res.send(
+            `<h1 style="color:blue"> Bienvenidos al Servidor Express </h1>
+            <a href="/items">Items</a>
+            <a href="/item-random">Item Random</a>
+            <a href="/visitas">Visitas</a>`
+            );
+    } catch {
+        console.log('Error al cargar el Home');
+        res.send('<h1 style="color:red"> Parece que hubo un error </h1> ');
+    }
 });
